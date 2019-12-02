@@ -28,6 +28,7 @@ public class Logger {
 
     private static void writeToLog(String s) throws IOException {
         logFileWriter.write(s);
+        // TODO
     }
 
     public static void logInfo(String msg) {
