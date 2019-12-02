@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
-      <module name="OpenSDM" target="8" />
+      <module name="OpenSDM" target="6" />
     </bytecodeTargetLevel>
   </component>
 </project>
