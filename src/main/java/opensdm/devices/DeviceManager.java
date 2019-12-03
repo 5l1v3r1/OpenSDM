@@ -1,15 +1,21 @@
 package opensdm.devices;
 
-import opensdm.devices.device.Control;
-import opensdm.devices.device.ControlType;
 import opensdm.devices.device.SmartDevice;
+
+import java.util.ArrayList;
 
 public class DeviceManager {
 
-    public void registerDevices() {
-        SmartDevice s = new SmartDevice(new Control[]{
-                new Control(ControlType.BUTTON),
-                new Control(ControlType.SLIDER)
-        });
+    ArrayList<SmartDevice> smartDevices = new ArrayList();
+
+    public void registerNewDevice(SmartDevice smartDevice) {
+        this.smartDevices.add(smartDevice);
     }
+
+    public void update() {
+        for(SmartDevice sd : smartDevices) {
+            sd.update();
+        }
+    }
+
 }

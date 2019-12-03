@@ -2,6 +2,11 @@ package opensdm;
 
 import opensdm.logging.Logger;
 import opensdm.web.HttpServerManager;
+import org.apache.http.HttpHeaders;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 
