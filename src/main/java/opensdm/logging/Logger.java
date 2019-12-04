@@ -28,7 +28,7 @@ public class Logger {
     }
 
     private static void writeToLog(String s) throws IOException {
-        bufferedWriter.write(s);
+        bufferedWriter.write(s + "\n");
         // TODO
     }
 

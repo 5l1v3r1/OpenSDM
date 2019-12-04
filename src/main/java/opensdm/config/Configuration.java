@@ -13,4 +13,7 @@ public class Configuration {
 
     private String subnet = "";
 
+    public String getSubnet() {
+        return subnet;
+    }
 }

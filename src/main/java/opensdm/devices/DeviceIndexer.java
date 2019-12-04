@@ -1,6 +1,9 @@
 package opensdm.devices;
 
+import opensdm.config.Configuration;
+import opensdm.logging.Logger;
 import org.apache.http.HttpHeaders;
+import org.apache.http.client.methods.Configurable;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -11,8 +14,17 @@ import java.net.InetAddress;
 
 public class DeviceIndexer {
 
-    public void indexDevices() {
+    public void indexDevices() throws IOException {
+        Logger.logInfo("Indexing devices...");
+        int devicesFound = 0;
 
+        for(int i = 0; i <= 255; i++) {
+            if(checkIp(Configuration.getConfiguration().getSubnet() + i)) {
+                devicesFound++;
+            }
+        }
+
+        Logger.logInfo("Found " + devicesFound + " devices!");
     }
 
     private final CloseableHttpClient httpClient = HttpClients.createDefault();
