@@ -1,5 +1,6 @@
 package opensdm.logging;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -8,7 +9,7 @@ import java.util.Date;
 
 public class Logger {
 
-    private static FileWriter logFileWriter;
+    private static BufferedWriter bufferedWriter;
 
     public static void initalizeLogger() throws IOException {
         File f = new File("latest.log");
@@ -19,7 +20,7 @@ public class Logger {
 
         f.createNewFile();
 
-        logFileWriter = new FileWriter("latest.log");
+        bufferedWriter = new BufferedWriter(new FileWriter(f));
     }
 
     private static String getCurrentTimeStamp() {
@@ -27,7 +28,7 @@ public class Logger {
     }
 
     private static void writeToLog(String s) throws IOException {
-        logFileWriter.write(s);
+        bufferedWriter.write(s);
         // TODO
     }
 
