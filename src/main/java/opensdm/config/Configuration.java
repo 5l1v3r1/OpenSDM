@@ -1,6 +1,5 @@
 package opensdm.config;
 
-import sun.security.krb5.Config;
 
 public class Configuration {
 

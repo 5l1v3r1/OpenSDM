@@ -9,19 +9,23 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 
 public class ConfigurationLoader {
 
-    public void loadConfiguration() throws IOException {
+    public void loadConfiguration() throws IOException, URISyntaxException {
         Logger.logInfo("Loading Configuration...");
-        Logger.logDebug(this.toString());
         File configFile = new File("config.yml");
 
         if(!configFile.exists()) {
             Logger.logDebug("No config file found! Creating...");
-            URL defaultConfigUrl = getClass().getResource("/default_config.yml");;
-            FileUtils.copyURLToFile(defaultConfigUrl, configFile);
+
+            // I'm sorry...
+            String hardcodedConfig = "subnet: 192.168.1.*\n";
+
+            BufferedWriter bw = new BufferedWriter(new FileWriter(configFile));
+            bw.write(hardcodedConfig);
         }
 
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());

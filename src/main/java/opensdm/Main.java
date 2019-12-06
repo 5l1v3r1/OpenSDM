@@ -1,14 +1,11 @@
 package opensdm;
 
+import opensdm.config.ConfigurationLoader;
 import opensdm.logging.Logger;
 import opensdm.web.HttpServerManager;
-import org.apache.http.HttpHeaders;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 public class Main {
 
@@ -21,12 +18,20 @@ public class Main {
         }
 
         Logger.logInfo("Starting up, please wait...");
-        Logger.logInfo("Loading devices...");
+        Logger.logInfo("Loading configuration...");
 
+        ConfigurationLoader confLoader = new ConfigurationLoader();
+        try {
+            confLoader.loadConfiguration();
+        } catch (IOException | URISyntaxException e) {
+            Logger.logError(e.getMessage());
+        }
 
         HttpServerManager hsm = new HttpServerManager();
         hsm.registerApiEndpoints();
         hsm.startServer();
+
+        Logger.logInfo("asf");
     }
 
 }
