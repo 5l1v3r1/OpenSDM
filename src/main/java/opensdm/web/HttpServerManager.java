@@ -5,6 +5,7 @@ import com.sun.net.httpserver.HttpServer;
 import opensdm.logging.Logger;
 import opensdm.web.api.GetAllDevicesHandler;
 import opensdm.web.api.IndexDevicesHandler;
+import opensdm.web.api.ListEndpointsHandler;
 import opensdm.web.api.PingHandler;
 
 import java.io.IOException;
@@ -32,12 +33,17 @@ public class HttpServerManager {
         registerEndpoint("/api/getAllDevices", new GetAllDevicesHandler());
         registerEndpoint("/api/ping", new PingHandler());
         registerEndpoint("/api/indexDevices", new IndexDevicesHandler());
+        registerEndpoint("/api", new ListEndpointsHandler());
         Logger.logInfo("All API endpoints initialized");
     }
 
     public void startServer() {
         httpServer.start();
         Logger.logInfo("Webserver started on port " + port + ". Api is at 'http://this.device:" + port + "/api/...'");
+    }
+
+    public void stopServer() {
+        httpServer.stop(0);
     }
 
 }

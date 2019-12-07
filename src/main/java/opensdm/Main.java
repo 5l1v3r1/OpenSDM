@@ -9,6 +9,8 @@ import java.net.URISyntaxException;
 
 public class Main {
 
+    private static HttpServerManager hsm = new HttpServerManager();
+
     public static void main(String[] args) {
         try {
             Logger.initalizeLogger();
@@ -27,11 +29,15 @@ public class Main {
             Logger.logError(e.getMessage());
         }
 
-        HttpServerManager hsm = new HttpServerManager();
         hsm.registerApiEndpoints();
         hsm.startServer();
 
-        Logger.logInfo("asf");
+
+    }
+
+    public static void exit(int status) {
+        hsm.startServer();
+        System.exit(status);
     }
 
 }

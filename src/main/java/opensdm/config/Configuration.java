@@ -11,6 +11,11 @@ public class Configuration {
 
 
     private String subnet = "";
+    private boolean showDebugMessages = false;
+
+    public boolean isShowDebugMessages() {
+        return showDebugMessages;
+    }
 
     public String getSubnet() {
         return subnet;
