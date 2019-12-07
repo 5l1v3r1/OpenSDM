@@ -3,3 +3,5 @@ jdk:
   - openjdk8
   - openjdk11
   - openjdk10
+  - openjdk12
+  - openjdk13
