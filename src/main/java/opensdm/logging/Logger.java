@@ -12,20 +12,22 @@ import java.util.Date;
 public class Logger {
 
     private static BufferedWriter bufferedWriter;
+    private static boolean log = true;
 
     public static void initalizeLogger() throws IOException {
         File f = new File("latest.log");
 
         if (f.exists()) {
             f.delete();
+            Logger.logErrorWithoutLogging("Can't delete latest.log!");
         }
 
         if(f.canWrite()) {
-            Logger.logErrorWithoutLogging("Can't write into file latest.log. The console output will not be logged!");
-            Configuration.getConfiguration().log = false;
+            Logger.logWarnWithoutLogging("Can't write into file latest.log. The console output will not be logged!");
+            log = false;
         }
 
-        if(Configuration.getConfiguration().log) {
+        if(log) {
             bufferedWriter = new BufferedWriter(new FileWriter(f, true));
         }
     }
@@ -35,7 +37,7 @@ public class Logger {
     }
 
     static void writeToLog(String s) throws IOException {
-        if(Configuration.getConfiguration().log) {
+        if(log) {
             bufferedWriter.write(s);
             bufferedWriter.newLine();
             bufferedWriter.flush();
@@ -60,6 +62,10 @@ public class Logger {
         }
     }
 
+    public static void logWarnWithoutLogging(String msg) {
+        System.out.println("[" + getCurrentTimeStamp() + "] WARN > " + msg);
+    }
+
     public static void logError(String msg) {
         System.err.println("[" + getCurrentTimeStamp() + "] ERROR > " + msg);
         try {
@@ -69,16 +75,18 @@ public class Logger {
         }
     }
 
-    static void logErrorWithoutLogging(String msg) {
+    public static void logErrorWithoutLogging(String msg) {
         System.err.println("[" + getCurrentTimeStamp() + "] ERROR > " + msg);
     }
 
     public static void logDebug(String msg) {
-        System.out.println("[" + getCurrentTimeStamp() + "] DEBUG > " + msg);
-        try {
-            writeToLog("[" + getCurrentTimeStamp() + "] DEBUG > " + msg);
-        } catch (IOException e) {
-            logError(e.getMessage());
+        if(Configuration.getConfiguration().isShowDebugMessages()) {
+            System.out.println("[" + getCurrentTimeStamp() + "] DEBUG > " + msg);
+            try {
+                writeToLog("[" + getCurrentTimeStamp() + "] DEBUG > " + msg);
+            } catch (IOException e) {
+                logError(e.getMessage());
+            }
         }
     }
 

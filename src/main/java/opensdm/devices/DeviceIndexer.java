@@ -19,7 +19,7 @@ public class DeviceIndexer {
         int devicesFound = 0;
 
         for(int i = 0; i <= 255; i++) {
-            if(checkIp(Configuration.getConfiguration().subnet + i)) {
+            if(checkIp(Configuration.getConfiguration().getSubnet() + i)) {
                 devicesFound++;
             }
         }

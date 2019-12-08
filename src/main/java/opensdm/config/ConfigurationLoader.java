@@ -22,11 +22,12 @@ public class ConfigurationLoader {
                 FileUtils.exportResource("/config.yml");
             } catch (Exception e) {
                 Logger.logError(e.getMessage());
-
             }
         }
 
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
+
+        mapper.findAndRegisterModules();
 
         mapper.readValue(configFile, Configuration.class);
         Logger.logInfo("Configuration loaded!");

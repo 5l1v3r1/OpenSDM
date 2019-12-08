@@ -1,9 +1,5 @@
-[2019-12-08 19:16:05.491] INFO > Starting up, please wait...
-[2019-12-08 19:16:05.493] INFO > Loading Configuration...
-[2019-12-08 19:16:05.698] INFO > Configuration loaded!
-[2019-12-08 19:16:06.094] DEBUG > Initialized API endpoint: /api/getAllDevices	  -> opensdm.web.api.GetAllDevicesHandler
-[2019-12-08 19:16:06.095] DEBUG > Initialized API endpoint: /api/ping	  -> opensdm.web.api.PingHandler
-[2019-12-08 19:16:06.096] DEBUG > Initialized API endpoint: /api/indexDevices	  -> opensdm.web.api.IndexDevicesHandler
-[2019-12-08 19:16:06.096] DEBUG > Initialized API endpoint: /api	  -> opensdm.web.api.ListEndpointsHandler
-[2019-12-08 19:16:06.096] INFO > All API endpoints initialized
-[2019-12-08 19:16:06.097] INFO > Webserver started on port 80. Api is at 'http://this.device:80/api/...'
+[2019-12-08 20:31:26.046] INFO > Starting up, please wait...
+[2019-12-08 20:31:26.048] INFO > Loading Configuration...
+[2019-12-08 20:31:26.243] INFO > Configuration loaded!
+[2019-12-08 20:31:26.629] INFO > All API endpoints initialized
+[2019-12-08 20:31:26.630] INFO > Webserver started on port 80. Api is at 'http://this.device:80/api/...'
