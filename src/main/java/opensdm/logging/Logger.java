@@ -1,5 +1,7 @@
 package opensdm.logging;
 
+import opensdm.config.Configuration;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -14,22 +16,30 @@ public class Logger {
     public static void initalizeLogger() throws IOException {
         File f = new File("latest.log");
 
-        if(f.exists()) {
+        if (f.exists()) {
             f.delete();
         }
 
-        f.createNewFile();
+        if(f.canWrite()) {
+            Logger.logErrorWithoutLogging("Can't write into file latest.log. The console output will not be logged!");
+            Configuration.getConfiguration().log = false;
+        }
 
-        bufferedWriter = new BufferedWriter(new FileWriter(f));
+        if(Configuration.getConfiguration().log) {
+            bufferedWriter = new BufferedWriter(new FileWriter(f, true));
+        }
     }
 
     private static String getCurrentTimeStamp() {
         return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS").format(new Date());
     }
 
-    private static void writeToLog(String s) throws IOException {
-        bufferedWriter.write(s + "\n");
-        // TODO
+    static void writeToLog(String s) throws IOException {
+        if(Configuration.getConfiguration().log) {
+            bufferedWriter.write(s);
+            bufferedWriter.newLine();
+            bufferedWriter.flush();
+        }
     }
 
     public static void logInfo(String msg) {
@@ -57,6 +67,10 @@ public class Logger {
         } catch (IOException e) {
             logError(e.getMessage());
         }
+    }
+
+    static void logErrorWithoutLogging(String msg) {
+        System.err.println("[" + getCurrentTimeStamp() + "] ERROR > " + msg);
     }
 
     public static void logDebug(String msg) {

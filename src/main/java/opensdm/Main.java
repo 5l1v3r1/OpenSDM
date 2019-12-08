@@ -9,8 +9,6 @@ import java.net.URISyntaxException;
 
 public class Main {
 
-    private static HttpServerManager hsm = new HttpServerManager();
-
     public static void main(String[] args) {
         try {
             Logger.initalizeLogger();
@@ -20,7 +18,6 @@ public class Main {
         }
 
         Logger.logInfo("Starting up, please wait...");
-        Logger.logInfo("Loading configuration...");
 
         ConfigurationLoader confLoader = new ConfigurationLoader();
         try {
@@ -29,15 +26,11 @@ public class Main {
             Logger.logError(e.getMessage());
         }
 
+
+        HttpServerManager hsm = new HttpServerManager();
         hsm.registerApiEndpoints();
         hsm.startServer();
 
-
-    }
-
-    public static void exit(int status) {
-        hsm.startServer();
-        System.exit(status);
     }
 
 }

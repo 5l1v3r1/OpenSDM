@@ -10,14 +10,8 @@ public class Configuration {
     }
 
 
-    private String subnet = "";
-    private boolean showDebugMessages = false;
+    public String subnet = "";
+    public boolean showDebugMessages = false;
+    public boolean log = true;
 
-    public boolean isShowDebugMessages() {
-        return showDebugMessages;
-    }
-
-    public String getSubnet() {
-        return subnet;
-    }
 }

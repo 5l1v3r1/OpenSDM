@@ -3,10 +3,7 @@ package opensdm.web;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 import opensdm.logging.Logger;
-import opensdm.web.api.GetAllDevicesHandler;
-import opensdm.web.api.IndexDevicesHandler;
-import opensdm.web.api.ListEndpointsHandler;
-import opensdm.web.api.PingHandler;
+import opensdm.web.api.*;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

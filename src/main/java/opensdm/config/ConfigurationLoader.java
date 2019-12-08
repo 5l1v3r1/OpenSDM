@@ -19,7 +19,7 @@ public class ConfigurationLoader {
             Logger.logDebug("No config file found! Creating...");
 
             try {
-                FileUtils.exportResource("/default_config.yml");
+                FileUtils.exportResource("/config.yml");
             } catch (Exception e) {
                 Logger.logError(e.getMessage());
 
