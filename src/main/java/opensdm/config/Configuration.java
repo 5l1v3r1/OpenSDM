@@ -13,12 +13,6 @@ public class Configuration {
         this.subnet = subnet;
     }
 
-    private static Configuration configuration = new Configuration();
-
-    public static Configuration getConfiguration() {
-        return configuration;
-    }
-
 
     private String subnet = "";
     private boolean showDebugMessages = false;

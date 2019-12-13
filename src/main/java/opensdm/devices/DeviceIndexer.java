@@ -1,6 +1,7 @@
 package opensdm.devices;
 
 import opensdm.config.Configuration;
+import opensdm.config.ConfigurationManager;
 import opensdm.logging.Logger;
 import org.apache.http.HttpHeaders;
 import org.apache.http.client.methods.Configurable;
@@ -19,7 +20,7 @@ public class DeviceIndexer {
         int devicesFound = 0;
 
         for(int i = 0; i <= 255; i++) {
-            if(checkIp(Configuration.getConfiguration().getSubnet() + i)) {
+            if(checkIp(ConfigurationManager.getConfiguration().getSubnet() + i)) {
                 devicesFound++;
             }
         }

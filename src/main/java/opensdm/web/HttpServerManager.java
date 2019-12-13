@@ -3,6 +3,7 @@ package opensdm.web;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
 import opensdm.config.Configuration;
+import opensdm.config.ConfigurationManager;
 import opensdm.logging.Logger;
 import opensdm.web.api.*;
 
@@ -15,7 +16,7 @@ public class HttpServerManager {
 
     public HttpServerManager() {
         try {
-            httpServer = HttpServer.create(new InetSocketAddress(Configuration.getConfiguration().getHttpServerPort()), 0);
+            httpServer = HttpServer.create(new InetSocketAddress(ConfigurationManager.getConfiguration().getHttpServerPort()), 0);
         } catch (IOException e) {
             Logger.logError(e.getMessage());
         }
@@ -36,7 +37,7 @@ public class HttpServerManager {
 
     public void startServer() {
         httpServer.start();
-        Logger.logInfo("Webserver started on port " + Configuration.getConfiguration().getHttpServerPort() + ". Api is at 'http://this.device:" + Configuration.getConfiguration().getHttpServerPort() + "/api/...'");
+        Logger.logInfo("Webserver started on port " + ConfigurationManager.getConfiguration().getHttpServerPort() + ". Api is at 'http://this.device:" + ConfigurationManager.getConfiguration().getHttpServerPort() + "/api/...'");
     }
 
     public void stopServer() {

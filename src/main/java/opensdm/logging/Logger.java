@@ -1,6 +1,7 @@
 package opensdm.logging;
 
 import opensdm.config.Configuration;
+import opensdm.config.ConfigurationManager;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -80,7 +81,7 @@ public class Logger {
     }
 
     public static void logDebug(String msg) {
-        if(Configuration.getConfiguration().isShowDebugMessages()) {
+        if(ConfigurationManager.getConfiguration().isShowDebugMessages()) {
             System.out.println("[" + getCurrentTimeStamp() + "] DEBUG > " + msg);
             try {
                 writeToLog("[" + getCurrentTimeStamp() + "] DEBUG > " + msg);

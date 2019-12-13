@@ -16,8 +16,7 @@ public class ConfigurationLoader {
         File configFile = new File("config.yml");
 
         if(!configFile.exists()) {
-            Logger.logDebug("No config file found! Creating...");
-
+            Logger.logInfo("No config file found! Creating...");
             try {
                 FileUtils.exportResource("/config.yml");
             } catch (Exception e) {
@@ -29,7 +28,7 @@ public class ConfigurationLoader {
 
         mapper.findAndRegisterModules();
 
-        mapper.readValue(configFile, Configuration.class);
+        ConfigurationManager.setConfiguration(mapper.readValue(configFile, Configuration.class));
         Logger.logInfo("Configuration loaded!");
     }
 
