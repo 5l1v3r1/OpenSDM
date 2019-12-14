@@ -1,6 +1,7 @@
 package opensdm;
 
 import opensdm.config.ConfigurationLoader;
+import opensdm.devices.*;
 import opensdm.logging.Logger;
 import opensdm.web.HttpServerManager;
 
@@ -26,11 +27,16 @@ public class Main {
             Logger.logError(e.getMessage());
         }
 
-
         HttpServerManager hsm = new HttpServerManager();
         hsm.registerApiEndpoints();
         hsm.startServer();
 
+        DeviceIndexer deviceIndexer = new DeviceIndexer();
+        try {
+            deviceIndexer.indexDevices();
+        } catch (IOException e) {
+            Logger.logError(e.getMessage());
+        }
     }
 
 }

@@ -20,7 +20,7 @@ public class Logger {
 
         if (f.exists()) {
             f.delete();
-            Logger.logErrorWithoutLogging("Can't delete latest.log!");
+            Logger.logWarnWithoutLogging("Deleted latest.log!");
         }
 
         if(f.canWrite()) {

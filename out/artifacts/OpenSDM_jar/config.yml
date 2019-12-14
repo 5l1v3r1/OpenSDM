@@ -1,3 +1,12 @@
-subnet: 192.168.1.*
-showDebugMessages: true
-httpServerPort: 8080
+## NETWORK SETTINGS ##
+subnet: 192.168.1.*         # Subnet to search for SmartDevices in
+deviceTimeout: 500          # Timeout for SmartDevice ping
+######################
+
+## LOGGING SETTINGS ##
+showDebugMessages: true     # Enables/Disables debug messages in the log. Turn this on if you encounter an error!
+######################
+
+#### WEB SETTINGS ####
+httpServerPort: 80          # Exactly what you think it is
+######################

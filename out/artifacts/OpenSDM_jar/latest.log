@@ -1,9 +1,16 @@
-[2019-12-13 19:36:05.487] INFO > Starting up, please wait...
-[2019-12-13 19:36:05.492] INFO > Loading Configuration...
-[2019-12-13 19:36:05.666] INFO > Configuration loaded!
-[2019-12-13 19:36:05.724] DEBUG > Initialized API endpoint: /api/getAllDevices	  -> opensdm.web.api.GetAllDevicesHandler
-[2019-12-13 19:36:05.724] DEBUG > Initialized API endpoint: /api/ping	  -> opensdm.web.api.PingHandler
-[2019-12-13 19:36:05.725] DEBUG > Initialized API endpoint: /api/indexDevices	  -> opensdm.web.api.IndexDevicesHandler
-[2019-12-13 19:36:05.725] DEBUG > Initialized API endpoint: /api	  -> opensdm.web.api.ListEndpointsHandler
-[2019-12-13 19:36:05.726] INFO > All API endpoints initialized
-[2019-12-13 19:36:05.726] INFO > Webserver started on port 8080. Api is at 'http://this.device:8080/api/...'
+[2019-12-14 22:02:53.440] INFO > Starting up, please wait...
+[2019-12-14 22:02:53.442] INFO > Loading Configuration...
+[2019-12-14 22:02:53.443] INFO > No config file found! Creating...
+[2019-12-14 22:02:53.635] INFO > Configuration loaded!
+[2019-12-14 22:02:53.976] DEBUG > Initialized API endpoint: /api/getAllDevices	  -> opensdm.web.api.GetAllDevicesHandler
+[2019-12-14 22:02:53.977] DEBUG > Initialized API endpoint: /api/ping	  -> opensdm.web.api.PingHandler
+[2019-12-14 22:02:53.978] DEBUG > Initialized API endpoint: /api/indexDevices	  -> opensdm.web.api.IndexDevicesHandler
+[2019-12-14 22:02:53.979] DEBUG > Initialized API endpoint: /api	  -> opensdm.web.api.ListEndpointsHandler
+[2019-12-14 22:02:53.980] INFO > All API endpoints initialized
+[2019-12-14 22:02:53.981] INFO > Webserver started on port 80. Api is at 'http://this.device:80/api/...'
+[2019-12-14 22:02:54.440] INFO > Indexing devices...
+[2019-12-14 22:02:54.441] DEBUG > Checking IP 192.168.1.0
+[2019-12-14 22:02:55.231] DEBUG > Checking IP 192.168.1.1
+[2019-12-14 22:02:55.275] DEBUG > Checking IP 192.168.1.2
+[2019-12-14 22:02:56.231] DEBUG > Checking IP 192.168.1.3
+[2019-12-14 22:02:57.566] ERROR > Connect to 192.168.1.3:80 [/192.168.1.3] failed: Connection refused: connect
