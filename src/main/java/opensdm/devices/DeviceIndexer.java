@@ -3,6 +3,7 @@ package opensdm.devices;
 import opensdm.config.ConfigurationManager;
 import opensdm.logging.Logger;
 import org.apache.http.HttpHeaders;
+import org.apache.http.HttpResponse;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.RequestBuilder;
@@ -40,7 +41,14 @@ public class DeviceIndexer {
         if (InetAddress.getByName(ip).isReachable(ConfigurationManager.getConfiguration().getDeviceTimeout())) {
             HttpGet request = new HttpGet("http://" + ip + "/whoareyou");
             request.addHeader(HttpHeaders.USER_AGENT, "OpenSDM Indexer");
-            if (EntityUtils.toString(httpClient.execute(request).getEntity()) == "opensdm_smartdevice") {
+
+            HttpResponse httpResponse = httpClient.execute(request);
+
+            if (!(httpResponse.getStatusLine().getStatusCode() < 200) && !(httpResponse.getStatusLine().getStatusCode() > 300)) {
+                Logger.logDebug("Device at " + ip + " is reachable, but denied an HTTP connection!");
+            } // TODO
+
+            if (EntityUtils.toString(httpResponse.getEntity()) == "opensdm_smartdevice") {
                 isSmartDevice = true;
             }
         }
