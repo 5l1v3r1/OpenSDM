@@ -1,16 +1,17 @@
-[2019-12-14 22:02:53.440] INFO > Starting up, please wait...
-[2019-12-14 22:02:53.442] INFO > Loading Configuration...
-[2019-12-14 22:02:53.443] INFO > No config file found! Creating...
-[2019-12-14 22:02:53.635] INFO > Configuration loaded!
-[2019-12-14 22:02:53.976] DEBUG > Initialized API endpoint: /api/getAllDevices	  -> opensdm.web.api.GetAllDevicesHandler
-[2019-12-14 22:02:53.977] DEBUG > Initialized API endpoint: /api/ping	  -> opensdm.web.api.PingHandler
-[2019-12-14 22:02:53.978] DEBUG > Initialized API endpoint: /api/indexDevices	  -> opensdm.web.api.IndexDevicesHandler
-[2019-12-14 22:02:53.979] DEBUG > Initialized API endpoint: /api	  -> opensdm.web.api.ListEndpointsHandler
-[2019-12-14 22:02:53.980] INFO > All API endpoints initialized
-[2019-12-14 22:02:53.981] INFO > Webserver started on port 80. Api is at 'http://this.device:80/api/...'
-[2019-12-14 22:02:54.440] INFO > Indexing devices...
-[2019-12-14 22:02:54.441] DEBUG > Checking IP 192.168.1.0
-[2019-12-14 22:02:55.231] DEBUG > Checking IP 192.168.1.1
-[2019-12-14 22:02:55.275] DEBUG > Checking IP 192.168.1.2
-[2019-12-14 22:02:56.231] DEBUG > Checking IP 192.168.1.3
-[2019-12-14 22:02:57.566] ERROR > Connect to 192.168.1.3:80 [/192.168.1.3] failed: Connection refused: connect
+[2019-12-17 16:33:31.561] INFO > Starting up, please wait...
+[2019-12-17 16:33:31.563] INFO > Loading Configuration...
+[2019-12-17 16:33:31.761] INFO > Configuration loaded!
+[2019-12-17 16:33:32.140] DEBUG > Initialized API endpoint: /api/getAllDevices	  -> opensdm.web.api.GetAllDevicesHandler
+[2019-12-17 16:33:32.141] DEBUG > Initialized API endpoint: /api/ping	  -> opensdm.web.api.PingHandler
+[2019-12-17 16:33:32.142] DEBUG > Initialized API endpoint: /api/indexDevices	  -> opensdm.web.api.IndexDevicesHandler
+[2019-12-17 16:33:32.144] DEBUG > Initialized API endpoint: /api	  -> opensdm.web.api.ListEndpointsHandler
+[2019-12-17 16:33:32.144] INFO > All API endpoints initialized
+[2019-12-17 16:33:32.145] INFO > Webserver started on port 80. Api is at 'http://this.device:80/api/...'
+[2019-12-17 16:33:32.702] INFO > Indexing devices...
+[2019-12-17 16:33:32.702] DEBUG > Checking IP 192.168.1.0
+[2019-12-17 16:33:33.231] DEBUG > Checking IP 192.168.1.1
+[2019-12-17 16:33:33.284] DEBUG > Checking IP 192.168.1.2
+[2019-12-17 16:33:34.231] DEBUG > Checking IP 192.168.1.3
+[2019-12-17 16:33:35.231] DEBUG > Checking IP 192.168.1.4
+[2019-12-17 16:33:36.231] DEBUG > Checking IP 192.168.1.5
+[2019-12-17 16:33:37.232] DEBUG > Checking IP 192.168.1.6

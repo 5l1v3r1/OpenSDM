@@ -5,6 +5,7 @@ public class Configuration {
 
     private String subnet = "";
     private int deviceTimeout = 200;
+    private int deviceRequestTimeout = 1000;
 
     private boolean showDebugMessages = false;
 
@@ -26,4 +27,7 @@ public class Configuration {
         return showDebugMessages;
     }
 
+    public int getDeviceRequestTimeout() {
+        return deviceRequestTimeout;
+    }
 }

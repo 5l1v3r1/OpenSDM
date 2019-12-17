@@ -1,10 +1,11 @@
 package opensdm.devices;
 
-import opensdm.config.Configuration;
 import opensdm.config.ConfigurationManager;
 import opensdm.logging.Logger;
 import org.apache.http.HttpHeaders;
+import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.RequestBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
@@ -31,7 +32,7 @@ public class DeviceIndexer {
         Logger.logInfo("Found " + devicesFound + " devices!");
     }
 
-    private final CloseableHttpClient httpClient = HttpClients.createDefault();
+    private final CloseableHttpClient httpClient = HttpClients.createSystem();
 
     boolean checkIp(String ip) throws IOException {
         Logger.logDebug("Checking IP " + ip);
