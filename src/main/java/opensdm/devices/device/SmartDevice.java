@@ -1,13 +1,18 @@
 package opensdm.devices.device;
 
+import java.util.List;
+
 public class SmartDevice {
 
-    private Control[] controls;
+    private List<Control> controls;
     private String name = "";
-    private String address = "";
-    private String id = "";
+    private String location = "";
+    private String uuid = "";
 
-    public Control[] getControls() {
+    private String address = "";
+
+
+    public List<Control> getControls() {
         return controls;
     }
 
@@ -15,23 +20,19 @@ public class SmartDevice {
         return address;
     }
 
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
     public String getName() {
         return name;
     }
 
-    public String getId() {
-        return id;
+    public String getUuid() {
+        return uuid;
     }
-
-    public SmartDevice(Control[] controls, String name, String address, String id) {
-        this.controls = controls;
-        this.name = name;
-        this.address = address;
-        this.id = id;
-    }
-
-    public void update() {
-
-    }
-
 }

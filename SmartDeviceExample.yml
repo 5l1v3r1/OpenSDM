@@ -2,29 +2,35 @@
 
 name: "Lämp"
 location: "Moth's room"
+uuid: "9e60350a-873f-4082-a3fb-cdeba22d072a"
 controls:
   - name: "Brightness"
     type: "slider"
     color: "#fff"
     max: 255
     min: 0
+    value: 0
   - name: "asdf"
     type: "switch"
     color: "#fff"
     max: 1
     min: 0
+    value: 1
   - name: "Red"
     type: "slider"
     color: "#f00"
     max: 255
     min: 0
+    value: 155
   - name: "Text"
     type: "text"
     color: "#000"
     max: 0
     min: 0
+    value: "test"
   - name: "Intruder Alert"
     type: "button"
     color: "#f00"
-    max: 0
+    max: 1
     min: 0
+    value: 0

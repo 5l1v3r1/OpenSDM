@@ -2,26 +2,31 @@ package opensdm.devices.device;
 
 public class Control {
 
-    ControlType ct;
-    String name = "";
-    Object value;
+    private String name = "";
+    private String type = "";
+    private String color = "";
+    private int max = 0;
+    private int min = 0;
+    private Object value = null;
 
-    public Control(ControlType ct, String name, String value) {
-        this.ct = ct;
-        this.name = name;
-        this.value = value;
+    public String getName() {
+        return name;
     }
 
-    public Control(ControlType ct, String name, int value) {
-        this.ct = ct;
-        this.name = name;
-        this.value = value;
+    public String getType() {
+        return type;
     }
 
-    public Control(ControlType ct, String name, boolean value) {
-        this.ct = ct;
-        this.name = name;
-        this.value = value;
+    public String getColor() {
+        return color;
+    }
+
+    public int getMax() {
+        return max;
+    }
+
+    public int getMin() {
+        return min;
     }
 
     public Object getValue() {
@@ -31,5 +36,4 @@ public class Control {
     public void setValue(Object value) {
         this.value = value;
     }
-
 }
