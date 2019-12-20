@@ -8,6 +8,7 @@ public class Configuration {
     private int deviceRequestTimeout = 1000;
 
     private boolean showDebugMessages = false;
+    private boolean showDeviceIndexerDebugMessages = false;
 
     private int httpServerPort = 80;
 
@@ -29,5 +30,9 @@ public class Configuration {
 
     public int getDeviceRequestTimeout() {
         return deviceRequestTimeout;
+    }
+
+    public boolean isShowDeviceIndexerDebugMessages() {
+        return showDeviceIndexerDebugMessages;
     }
 }

@@ -32,11 +32,7 @@ public class Main {
         hsm.startServer();
 
         DeviceIndexer deviceIndexer = new DeviceIndexer();
-        try {
-            deviceIndexer.indexDevices();
-        } catch (IOException e) {
-            Logger.logError(e.getMessage());
-        }
+        deviceIndexer.indexDevices();
     }
 
 }
