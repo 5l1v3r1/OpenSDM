@@ -39,18 +39,14 @@ public class DeviceIndexer {
         Logger.logDebug("Checking IP " + ip);
         boolean isSmartDevice = false;
         if (InetAddress.getByName(ip).isReachable(ConfigurationManager.getConfiguration().getDeviceTimeout())) {
-            HttpGet request = new HttpGet("http://" + ip + "/whoareyou");
+            /**HttpGet request = new HttpGet("http://" + ip + "/whoareyou");
             request.addHeader(HttpHeaders.USER_AGENT, "OpenSDM Indexer");
 
             HttpResponse httpResponse = httpClient.execute(request);
 
-            if (!(httpResponse.getStatusLine().getStatusCode() < 200) && !(httpResponse.getStatusLine().getStatusCode() > 300)) {
-                Logger.logDebug("Device at " + ip + " is reachable, but denied an HTTP connection!");
-            } // TODO
-
             if (EntityUtils.toString(httpResponse.getEntity()) == "opensdm_smartdevice") {
                 isSmartDevice = true;
-            }
+            }**/
         }
         return isSmartDevice;
     }

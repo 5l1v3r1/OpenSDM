@@ -1,12 +1,12 @@
-[2019-12-17 20:24:42.715] INFO > Starting up, please wait...
-[2019-12-17 20:24:42.717] INFO > Loading Configuration...
-[2019-12-17 20:24:42.868] INFO > Configuration loaded!
-[2019-12-17 20:24:42.923] DEBUG > Initialized API endpoint: /api/getAllDevices	  -> opensdm.web.api.GetAllDevicesHandler
-[2019-12-17 20:24:42.923] DEBUG > Initialized API endpoint: /api/ping	  -> opensdm.web.api.PingHandler
-[2019-12-17 20:24:42.924] DEBUG > Initialized API endpoint: /api/indexDevices	  -> opensdm.web.api.IndexDevicesHandler
-[2019-12-17 20:24:42.924] DEBUG > Initialized API endpoint: /api	  -> opensdm.web.api.ListEndpointsHandler
-[2019-12-17 20:24:42.924] INFO > All API endpoints initialized
-[2019-12-17 20:24:42.925] INFO > Webserver started on port 80. Api is at 'http://this.device:80/api/...'
-[2019-12-17 20:24:43.126] INFO > Indexing devices...
-[2019-12-17 20:24:43.126] DEBUG > Checking IP 192.168.1.0
-[2019-12-17 20:24:43.127] ERROR > Permission denied (connect failed)
+[2019-12-20 14:58:06.085] INFO > Starting up, please wait...
+[2019-12-20 14:58:06.087] INFO > Loading Configuration...
+[2019-12-20 14:58:06.235] INFO > Configuration loaded!
+[2019-12-20 14:58:06.290] DEBUG > Initialized API endpoint: /api/getAllDevices	  -> opensdm.web.api.GetAllDevicesHandler
+[2019-12-20 14:58:06.291] DEBUG > Initialized API endpoint: /api/ping	  -> opensdm.web.api.PingHandler
+[2019-12-20 14:58:06.292] DEBUG > Initialized API endpoint: /api/indexDevices	  -> opensdm.web.api.IndexDevicesHandler
+[2019-12-20 14:58:06.292] DEBUG > Initialized API endpoint: /api	  -> opensdm.web.api.ListEndpointsHandler
+[2019-12-20 14:58:06.293] INFO > All API endpoints initialized
+[2019-12-20 14:58:06.294] INFO > Webserver started on port 80. Api is at 'http://this.device:80/api/...'
+[2019-12-20 14:58:06.496] INFO > Indexing devices...
+[2019-12-20 14:58:06.497] DEBUG > Checking IP 192.168.1.0
+[2019-12-20 14:58:06.497] ERROR > Permission denied (connect failed)
