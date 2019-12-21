@@ -8,6 +8,7 @@ public class SmartDevice {
     private String name = "";
     private String location = "";
     private String uuid = "";
+    private String icon = "";
 
     private String address = "";
 
@@ -35,4 +36,13 @@ public class SmartDevice {
     public String getUuid() {
         return uuid;
     }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void update() {
+
+    }
+
 }

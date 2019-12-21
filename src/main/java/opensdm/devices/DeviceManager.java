@@ -28,7 +28,7 @@ public class DeviceManager {
     private void saveSmartDevice(SmartDevice smartDevice) {
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory().disable(YAMLGenerator.Feature.WRITE_DOC_START_MARKER));
 
-        File deviceYaml = new File("devices/" + smartDevice.getId());
+        File deviceYaml = new File("devices/" + smartDevice.getUuid());
 
         try {
             deviceYaml.createNewFile();
@@ -43,13 +43,10 @@ public class DeviceManager {
         }
     }
 
-    public void registerNewDevice(SmartDevice smartDevice) {
+    public void registerNewDevice(SmartDevice smartDevice, String ip) {
+        smartDevice.setAddress(ip);
         getDeviceManager().getSmartDevices().add(smartDevice);
         saveSmartDevice(smartDevice);
-    }
-
-    public void autoRegisterNewDevice(String address) {
-
     }
 
     public void update() {

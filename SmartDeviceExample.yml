@@ -2,6 +2,7 @@
 
 name: "Lämp"
 location: "Moth's room"
+icon: "lamp"
 uuid: "9e60350a-873f-4082-a3fb-cdeba22d072a"
 controls:
   - name: "Brightness"

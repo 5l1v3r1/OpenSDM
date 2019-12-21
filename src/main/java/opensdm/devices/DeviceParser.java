@@ -15,8 +15,7 @@ public class DeviceParser {
 
         SmartDevice smartDevice = mapper.readValue(yaml, SmartDevice.class);
 
-
-        return null;
+        return smartDevice;
     }
 
 }

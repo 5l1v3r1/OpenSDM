@@ -15,13 +15,14 @@ import java.util.ArrayList;
 
 public class DeviceIndexer {
 
+    DeviceParser deviceParser = new DeviceParser();
+
     public void indexDevices() {
         Logger.logInfo("Indexing devices...");
         int devicesFound = 0;
         ArrayList<String> devicesToIndex = new ArrayList<>();
 
         for(int i = 0; i <= 255; i++) {
-
             boolean isSmartDevice = checkIp(ConfigurationManager.getConfiguration().getSubnet().replace("*", "") + i);
 
             if(isSmartDevice) {
@@ -35,7 +36,7 @@ public class DeviceIndexer {
         Logger.logInfo("Parsing devices...");
 
         for(String ip : devicesToIndex) {
-            HttpGet request = new HttpGet("http://" + ip + "/whoareyou");
+            HttpGet request = new HttpGet("http://" + ip + "/deviceinfo");
             request.addHeader(HttpHeaders.USER_AGENT, "OpenSDM Indexer");
 
             HttpResponse httpResponse;
@@ -47,7 +48,17 @@ public class DeviceIndexer {
                 continue;
             }
 
+            try {
+                Logger.logDebug("Device at " + ip + " returned information: " + EntityUtils.toString(httpResponse.getEntity()));
+            } catch (IOException e) {
+                Logger.logError(e.getMessage());
+            }
 
+            try {
+                DeviceManager.getDeviceManager().registerNewDevice(deviceParser.parseDeviceFromYAML(EntityUtils.toString(httpResponse.getEntity())), ip);
+            } catch (IOException e) {
+                Logger.logError("Critical Error while registering new device: " + e.getMessage());
+            }
         }
     }
 
