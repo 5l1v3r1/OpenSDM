@@ -11,6 +11,7 @@ public class Configuration {
     private boolean showDeviceIndexerDebugMessages = false;
 
     private int httpServerPort = 80;
+    private String masterKey = "aaaaaaaaaaaaaaaa";
 
     public int getHttpServerPort() {
         return httpServerPort;
@@ -35,4 +36,9 @@ public class Configuration {
     public boolean isShowDeviceIndexerDebugMessages() {
         return showDeviceIndexerDebugMessages;
     }
+
+    public String getMasterKey() {
+        return masterKey;
+    }
+
 }
