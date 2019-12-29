@@ -10,4 +10,5 @@ showDeviceIndexerDebugMessages: true  # Enables/Disables debug messages for the 
 
 #### WEB SETTINGS ####
 httpServerPort: 80                    # Exactly what you think it is
+masterKey: "uielaidhesldidef"         # 16 chars long security key for the REST API
 ######################
