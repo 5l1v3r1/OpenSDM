@@ -62,6 +62,12 @@ public class DeviceManager {
             return;
         }
 
+        if(devicesFolder.listFiles().length == 0) {
+            Logger.logInfo("No SmartDevices found in in devices folder");
+
+            return;
+        }
+
         File[] files = devicesFolder.listFiles();
 
         int devicesLoaded = 0;

@@ -5,6 +5,9 @@ import com.sun.net.httpserver.HttpServer;
 import opensdm.config.ConfigurationManager;
 import opensdm.logging.Logger;
 import opensdm.web.api.*;
+import opensdm.web.api.devices.DeviceConfigurationHandler;
+import opensdm.web.api.devices.ReadDataHandler;
+import opensdm.web.api.devices.SendDataHandler;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -29,7 +32,10 @@ public class HttpServerManager {
     }
 
     public void registerApiEndpoints() {
-        registerEndpoint("/api/getAllDevices", new GetAllDevicesHandler());
+        registerEndpoint("/api/devices/sendData", new SendDataHandler());
+        registerEndpoint("/api/devices/readData", new ReadDataHandler());
+        registerEndpoint("/api/devices/deviceConfiguration", new DeviceConfigurationHandler());
+        registerEndpoint("/api/allDevices", new AllDevicesHandler());
         registerEndpoint("/api/ping", new PingHandler());
         registerEndpoint("/api/indexDevices", new IndexDevicesHandler());
         registerEndpoint("/api", new ListEndpointsHandler());

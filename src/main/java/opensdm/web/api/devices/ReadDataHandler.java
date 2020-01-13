@@ -1,21 +1,18 @@
-package opensdm.web.api;
+package opensdm.web.api.devices;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import opensdm.logging.Logger;
-import opensdm.devices.DeviceIndexer;
 import opensdm.web.HttpServerHelper;
 
 import java.io.IOException;
 import java.io.OutputStream;
 
-public class IndexDevicesHandler implements HttpHandler {
-
-    DeviceIndexer deviceIndexer = new DeviceIndexer();
+public class ReadDataHandler implements HttpHandler {
 
     @Override
-    public void handle(HttpExchange h) throws IOException {
-        Logger.logDebug("New Requst: /api/indexDevices");
+    public void handle(HttpExchange h) throws IOException { //TODO
+        Logger.logDebug("New Requst: /api/devices/readData");
 
         if(!HttpServerHelper.checkAPIKey(h.getRequestURI().getQuery())) {
             String response = "Unauthenticated!";
@@ -26,12 +23,6 @@ public class IndexDevicesHandler implements HttpHandler {
             return;
         }
 
-        deviceIndexer.indexDevices();
-        String response = "ok";
-        h.sendResponseHeaders(200, response.length());
-        OutputStream os = h.getResponseBody();
-        os.write(response.getBytes());
-        os.close();
     }
 
 }

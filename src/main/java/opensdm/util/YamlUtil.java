@@ -10,7 +10,7 @@ public class YamlUtil {
 
     public static void init() {
         yamlMapper.findAndRegisterModules();
-        Logger.logInfo("Yaml mapper initialized");
+        Logger.logInfo("YAML ObjectMapper initialized!");
     }
 
     public static ObjectMapper getYamlMapper() {

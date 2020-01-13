@@ -1,10 +1,26 @@
-[2020-01-13 18:26:47.221] INFO > Starting up, please wait...
-[2020-01-13 18:26:47.223] INFO > Loading Configuration...
-[2020-01-13 18:26:47.373] INFO > Configuration loaded!
-[2020-01-13 18:26:47.428] DEBUG > Initialized API endpoint: /api/getAllDevices	  -> opensdm.web.api.GetAllDevicesHandler
-[2020-01-13 18:26:47.428] DEBUG > Initialized API endpoint: /api/ping	  -> opensdm.web.api.PingHandler
-[2020-01-13 18:26:47.631] DEBUG > Initialized API endpoint: /api/indexDevices	  -> opensdm.web.api.IndexDevicesHandler
-[2020-01-13 18:26:47.631] DEBUG > Initialized API endpoint: /api	  -> opensdm.web.api.ListEndpointsHandler
-[2020-01-13 18:26:47.631] INFO > All API endpoints initialized
-[2020-01-13 18:26:52.642] INFO > Webserver started on port 80. Api is at 'http://10.218.73.95:80/api/...'
-[2020-01-13 18:26:52.643] INFO > Devices folder not found. Creating and skipping indexing...
+[2020-01-13 22:46:23.505] INFO > Starting up, please wait...
+[2020-01-13 22:46:23.505] INFO > Loading Configuration...
+[2020-01-13 22:46:23.716] INFO > Configuration loaded!
+[2020-01-13 22:46:23.777] DEBUG > Initialized API endpoint: /api/devices/sendData	  -> opensdm.web.api.devices.SendDataHandler
+[2020-01-13 22:46:23.777] DEBUG > Initialized API endpoint: /api/devices/readData	  -> opensdm.web.api.devices.ReadDataHandler
+[2020-01-13 22:46:23.778] DEBUG > Initialized API endpoint: /api/devices/deviceConfiguration	  -> opensdm.web.api.devices.DeviceConfigurationHandler
+[2020-01-13 22:46:23.778] DEBUG > Initialized API endpoint: /api/allDevices	  -> opensdm.web.api.AllDevicesHandler
+[2020-01-13 22:46:23.779] DEBUG > Initialized API endpoint: /api/ping	  -> opensdm.web.api.PingHandler
+[2020-01-13 22:46:24.027] DEBUG > Initialized API endpoint: /api/indexDevices	  -> opensdm.web.api.IndexDevicesHandler
+[2020-01-13 22:46:24.028] DEBUG > Initialized API endpoint: /api	  -> opensdm.web.api.ListEndpointsHandler
+[2020-01-13 22:46:24.028] INFO > All API endpoints initialized
+[2020-01-13 22:46:29.036] INFO > Webserver started on port 80. Api is at 'http://10.218.73.95:80/api/...'
+[2020-01-13 22:46:29.039] INFO > No SmartDevices found in in devices folder
+[2020-01-13 22:46:29.040] INFO > 
+[2020-01-13 22:46:29.040] INFO > WELCOME TO 
+[2020-01-13 22:46:29.041] INFO >    ___                   ____  ____  __  __ 
+[2020-01-13 22:46:29.041] INFO >   / _ \ _ __   ___ _ __ / ___||  _ \|  \/  |
+[2020-01-13 22:46:29.042] INFO >  | | | | '_ \ / _ \ '_ \\___ \| | | | |\/| |
+[2020-01-13 22:46:29.042] INFO >  | |_| | |_) |  __/ | | |___) | |_| | |  | |
+[2020-01-13 22:46:29.043] INFO >   \___/| .__/ \___|_| |_|____/|____/|_|  |_|  alpha1.0
+[2020-01-13 22:46:29.043] INFO >        |_|                                  
+[2020-01-13 22:46:29.044] INFO > Open SmartDevice Manager   |   by 0x0verflow
+[2020-01-13 22:46:44.797] DEBUG > New Requst: /api/allDevices
+[2020-01-13 22:46:44.799] WARN > Someone tried to use the OpenSDM API with the following apiKey: 
+[2020-01-13 22:46:54.379] DEBUG > New Requst: /api/allDevices
+[2020-01-13 22:46:54.380] WARN > Someone tried to use the OpenSDM API with the following apiKey: 1234123412341234

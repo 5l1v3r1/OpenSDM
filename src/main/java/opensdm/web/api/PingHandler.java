@@ -15,8 +15,8 @@ public class PingHandler implements HttpHandler {
         Logger.logDebug("New Requst: /api/ping");
 
         if(!HttpServerHelper.checkAPIKey(h.getRequestURI().getQuery())) {
-            String response = "wrong apiKey";
-            h.sendResponseHeaders(200, response.length());
+            String response = "Unauthenticated!";
+            h.sendResponseHeaders(401, response.length());
             OutputStream os = h.getResponseBody();
             os.write(response.getBytes());
             os.close();

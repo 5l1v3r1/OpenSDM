@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import opensdm.logging.Logger;
 import opensdm.util.FileUtils;
+import opensdm.util.YamlUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -24,11 +25,7 @@ public class ConfigurationLoader {
             }
         }
 
-        ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-
-        mapper.findAndRegisterModules();
-
-        ConfigurationManager.setConfiguration(mapper.readValue(configFile, Configuration.class));
+        ConfigurationManager.setConfiguration(YamlUtil.getYamlMapper().readValue(configFile, Configuration.class));
         Logger.logInfo("Configuration loaded!");
     }
 

@@ -1,5 +1,5 @@
 ## NETWORK SETTINGS ##
-subnet: 192.168.1.*                   # Subnet to search for SmartDevices in
+subnet: 192.168.1.*                   # Subnet to search in for SmartDevices
 deviceTimeout: 500                    # Timeout for SmartDevice ping
 ######################
 

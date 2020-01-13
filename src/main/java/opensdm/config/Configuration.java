@@ -11,7 +11,7 @@ public class Configuration {
     private boolean showDeviceIndexerDebugMessages = false;
 
     private int httpServerPort = 80;
-    private String masterKey = "aaaaaaaaaaaaaaaa";
+    private String masterKey = "1234123412341234";
 
     public int getHttpServerPort() {
         return httpServerPort;

@@ -1,6 +1,8 @@
 package opensdm.web;
 
+import opensdm.config.Configuration;
 import opensdm.config.ConfigurationManager;
+import opensdm.logging.Logger;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,7 +23,18 @@ public class HttpServerHelper {
     }
 
     public static boolean checkAPIKey(String query) {
-        return HttpServerHelper.queryToMap(query).get("apiKey") == ConfigurationManager.getConfiguration().getMasterKey();
+        if(query == null || query == "")
+            return false;
+
+        boolean isValid = false;
+
+        if(queryToMap(query).get("apiKey") == ConfigurationManager.getConfiguration().getMasterKey()) {
+            isValid = true;
+        } else {
+            Logger.logWarn("Someone tried to use the OpenSDM API with the following apiKey: " + queryToMap(query).get("apiKey"));
+        }
+
+        return isValid;
     }
 
 }
