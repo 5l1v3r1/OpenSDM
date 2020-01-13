@@ -1,6 +1,5 @@
 package opensdm.logging;
 
-import opensdm.config.Configuration;
 import opensdm.config.ConfigurationManager;
 
 import java.io.BufferedWriter;

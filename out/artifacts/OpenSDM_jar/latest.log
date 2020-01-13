@@ -1,51 +1,10 @@
-[2019-12-26 14:22:49.468] INFO > Starting up, please wait...
-[2019-12-26 14:22:49.470] INFO > Loading Configuration...
-[2019-12-26 14:22:49.619] INFO > Configuration loaded!
-[2019-12-26 14:22:49.675] DEBUG > Initialized API endpoint: /api/getAllDevices	  -> opensdm.web.api.GetAllDevicesHandler
-[2019-12-26 14:22:49.675] DEBUG > Initialized API endpoint: /api/ping	  -> opensdm.web.api.PingHandler
-[2019-12-26 14:22:49.943] DEBUG > Initialized API endpoint: /api/indexDevices	  -> opensdm.web.api.IndexDevicesHandler
-[2019-12-26 14:22:49.943] DEBUG > Initialized API endpoint: /api	  -> opensdm.web.api.ListEndpointsHandler
-[2019-12-26 14:22:49.944] INFO > All API endpoints initialized
-[2019-12-26 14:22:49.945] INFO > Webserver started on port 80. Api is at 'http://this.device:80/api/...'
-[2019-12-26 14:22:49.946] INFO > Indexing devices...
-[2019-12-26 14:22:49.946] DEBUG > Checking IP 192.168.1.0
-[2019-12-26 14:22:49.947] ERROR > Permission denied (connect failed)
-[2019-12-26 14:22:49.947] DEBUG > Checking IP 192.168.1.1
-[2019-12-26 14:22:50.103] DEBUG > Device at 192.168.1.1 is reachable but isn't an OpenSDM SmartDevice
-[2019-12-26 14:22:50.103] DEBUG > Checking IP 192.168.1.2
-[2019-12-26 14:22:50.605] DEBUG > Checking IP 192.168.1.3
-[2019-12-26 14:22:51.110] DEBUG > Checking IP 192.168.1.4
-[2019-12-26 14:22:51.613] DEBUG > Checking IP 192.168.1.5
-[2019-12-26 14:22:52.120] DEBUG > Checking IP 192.168.1.6
-[2019-12-26 14:22:52.622] DEBUG > Checking IP 192.168.1.7
-[2019-12-26 14:22:53.127] DEBUG > Checking IP 192.168.1.8
-[2019-12-26 14:22:53.633] DEBUG > Checking IP 192.168.1.9
-[2019-12-26 14:22:54.136] DEBUG > Checking IP 192.168.1.10
-[2019-12-26 14:22:54.638] DEBUG > Checking IP 192.168.1.11
-[2019-12-26 14:22:55.065] ERROR > 192.168.1.11:80 failed to respond
-[2019-12-26 14:22:55.066] DEBUG > Checking IP 192.168.1.12
-[2019-12-26 14:22:55.084] ERROR > Connect to 192.168.1.12:80 [/192.168.1.12] failed: Connection refused (Connection refused)
-[2019-12-26 14:22:55.085] DEBUG > Checking IP 192.168.1.13
-[2019-12-26 14:22:55.591] DEBUG > Checking IP 192.168.1.14
-[2019-12-26 14:22:56.098] DEBUG > Checking IP 192.168.1.15
-[2019-12-26 14:22:56.604] DEBUG > Checking IP 192.168.1.16
-[2019-12-26 14:22:57.009] DEBUG > Device at 192.168.1.16 is reachable but isn't an OpenSDM SmartDevice
-[2019-12-26 14:22:57.009] DEBUG > Checking IP 192.168.1.17
-[2019-12-26 14:22:57.514] DEBUG > Checking IP 192.168.1.18
-[2019-12-26 14:22:58.020] DEBUG > Checking IP 192.168.1.19
-[2019-12-26 14:22:58.522] DEBUG > Checking IP 192.168.1.20
-[2019-12-26 14:22:59.025] DEBUG > Checking IP 192.168.1.21
-[2019-12-26 14:22:59.527] DEBUG > Checking IP 192.168.1.22
-[2019-12-26 14:23:00.028] DEBUG > Checking IP 192.168.1.23
-[2019-12-26 14:23:00.535] DEBUG > Checking IP 192.168.1.24
-[2019-12-26 14:23:01.041] DEBUG > Checking IP 192.168.1.25
-[2019-12-26 14:23:01.545] DEBUG > Checking IP 192.168.1.26
-[2019-12-26 14:23:02.051] DEBUG > Checking IP 192.168.1.27
-[2019-12-26 14:23:02.556] DEBUG > Checking IP 192.168.1.28
-[2019-12-26 14:23:02.656] ERROR > Connect to 192.168.1.28:80 [/192.168.1.28] failed: Connection refused (Connection refused)
-[2019-12-26 14:23:02.656] DEBUG > Checking IP 192.168.1.29
-[2019-12-26 14:23:03.162] DEBUG > Checking IP 192.168.1.30
-[2019-12-26 14:23:03.666] DEBUG > Checking IP 192.168.1.31
-[2019-12-26 14:23:04.169] DEBUG > Checking IP 192.168.1.32
-[2019-12-26 14:23:04.675] DEBUG > Checking IP 192.168.1.33
-[2019-12-26 14:23:05.180] DEBUG > Checking IP 192.168.1.34
+[2020-01-13 18:26:47.221] INFO > Starting up, please wait...
+[2020-01-13 18:26:47.223] INFO > Loading Configuration...
+[2020-01-13 18:26:47.373] INFO > Configuration loaded!
+[2020-01-13 18:26:47.428] DEBUG > Initialized API endpoint: /api/getAllDevices	  -> opensdm.web.api.GetAllDevicesHandler
+[2020-01-13 18:26:47.428] DEBUG > Initialized API endpoint: /api/ping	  -> opensdm.web.api.PingHandler
+[2020-01-13 18:26:47.631] DEBUG > Initialized API endpoint: /api/indexDevices	  -> opensdm.web.api.IndexDevicesHandler
+[2020-01-13 18:26:47.631] DEBUG > Initialized API endpoint: /api	  -> opensdm.web.api.ListEndpointsHandler
+[2020-01-13 18:26:47.631] INFO > All API endpoints initialized
+[2020-01-13 18:26:52.642] INFO > Webserver started on port 80. Api is at 'http://10.218.73.95:80/api/...'
+[2020-01-13 18:26:52.643] INFO > Devices folder not found. Creating and skipping indexing...

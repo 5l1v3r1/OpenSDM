@@ -2,13 +2,14 @@ package opensdm.web;
 
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
-import opensdm.config.Configuration;
 import opensdm.config.ConfigurationManager;
 import opensdm.logging.Logger;
 import opensdm.web.api.*;
 
 import java.io.IOException;
+import java.net.InetAddress;
 import java.net.InetSocketAddress;
+import java.net.UnknownHostException;
 
 public class HttpServerManager {
 
@@ -35,9 +36,9 @@ public class HttpServerManager {
         Logger.logInfo("All API endpoints initialized");
     }
 
-    public void startServer() {
+    public void startServer() throws UnknownHostException {
         httpServer.start();
-        Logger.logInfo("Webserver started on port " + ConfigurationManager.getConfiguration().getHttpServerPort() + ". Api is at 'http://this.device:" + ConfigurationManager.getConfiguration().getHttpServerPort() + "/api/...'");
+        Logger.logInfo("Webserver started on port " + ConfigurationManager.getConfiguration().getHttpServerPort() + ". Api is at 'http://" + InetAddress.getLocalHost().getHostAddress() + ":" + ConfigurationManager.getConfiguration().getHttpServerPort() + "/api/...'");
     }
 
     public void stopServer() {

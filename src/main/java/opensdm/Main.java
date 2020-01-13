@@ -7,6 +7,7 @@ import opensdm.web.HttpServerManager;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.net.UnknownHostException;
 
 public class Main {
 
@@ -29,10 +30,16 @@ public class Main {
 
         HttpServerManager hsm = new HttpServerManager();
         hsm.registerApiEndpoints();
-        hsm.startServer();
+        try {
+            hsm.startServer();
+        } catch (UnknownHostException e) {
+            Logger.logError("Failed to get own IP in network: " + e.getMessage());
+        }
 
-        DeviceIndexer deviceIndexer = new DeviceIndexer();
-        deviceIndexer.indexDevices();
+        //DeviceIndexer deviceIndexer = new DeviceIndexer();
+        //deviceIndexer.indexDevices();
+
+        DeviceManager.getDeviceManager().loadDevices();
     }
 
 }
